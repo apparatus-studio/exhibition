@@ -1,9 +1,17 @@
 import React, { useEffect, useRef, FC } from 'react'
 import LottieView from 'lottie-react-native'
-import { Animated, Easing, View } from 'react-native'
+import { Animated, Easing } from 'react-native'
 import animationJSON from './animation'
 
-export const AnimationGigIntro: FC<{}> = () => {
+export type TAnimationGigIntro = {
+  height?: number,
+  width?: number,
+}
+
+export const AnimationGigIntro: FC<TAnimationGigIntro> = ({
+  height,
+  width,
+}) => {
   const fadeAnim = useRef(new Animated.Value(0)).current
 
   const timing = Animated.loop(
@@ -23,16 +31,14 @@ export const AnimationGigIntro: FC<{}> = () => {
   }, [])
 
   return (
-    <View style={{ position: 'relative', width: 256, height: 256 }}>
-      <LottieView
-        source={animationJSON}
-        progress={fadeAnim}
-        loop
-        style={{
-          width: 256,
-          height: 256,
-        }}
-      />
-    </View>
+    <LottieView
+      source={animationJSON}
+      progress={fadeAnim}
+      loop
+      style={{
+        width: width ?? 256,
+        height: height ?? 256,
+      }}
+    />
   )
 }

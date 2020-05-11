@@ -2,9 +2,15 @@ import React, { useEffect, useRef, FC } from 'react'
 import bodymovin, { AnimationItem } from 'lottie-web'
 import animationJSON from './animation'
 
-export type TAnimationGigIntro = {}
+export type TAnimationGigIntro = {
+  height?: number,
+  width?: number,
+}
 
-export const AnimationGigIntro: FC<TAnimationGigIntro> = () => {
+export const AnimationGigIntro: FC<TAnimationGigIntro> = ({
+  height,
+  width,
+}) => {
   const ref = useRef<any>()
   const animation = useRef<AnimationItem>()
 
@@ -21,11 +27,12 @@ export const AnimationGigIntro: FC<TAnimationGigIntro> = () => {
   }, [])
 
   return (
-    <div style={{ position: 'relative', width: 256, height: 256 }}>
-      <div
-        ref={ref}
-        style={{ width: 256, height: 256, position: 'absolute', top: 0, left: 0 }}
-      />
-    </div>
+    <div
+      ref={ref}
+      style={{
+        width: width ?? 256,
+        height: height ?? 256,
+      }}
+    />
   )
 }
