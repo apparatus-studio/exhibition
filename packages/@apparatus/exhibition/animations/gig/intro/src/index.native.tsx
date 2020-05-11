@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, FC } from 'react'
 import LottieView from 'lottie-react-native'
 import { Animated, Easing, View } from 'react-native'
-import animationJSON from './animation.json'
+import animationJSON from './animation'
 
 export const AnimationGigIntro: FC<{}> = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, FC } from 'react'
 import bodymovin, { AnimationItem } from 'lottie-web'
-import timerJSON from './timer.json'
-import needlesJSON from './needles.json'
+import timerJSON from './timer'
+import needlesJSON from './needles'
 
 export type TAnimationGigTimer = {
   play?: boolean,

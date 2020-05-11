@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, FC } from 'react'
 import LottieView from 'lottie-react-native'
 import { Animated, Easing, View } from 'react-native'
-import needlesJSON from './needles.json'
-import timerJSON from './timer.json'
+import needlesJSON from './needles'
+import timerJSON from './timer'
 
 export type TAnimationGigTimer = {
   play?: boolean,
