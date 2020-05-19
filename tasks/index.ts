@@ -8,9 +8,9 @@ import {
   CheckAndroidWebScreenshots,
   Sandbox,
   CheckChromePerfSnapshots,
-} from '@bubble-dev/start-preset'
+} from '@apparatus/meta-start-preset'
 
-export * from '@bubble-dev/start-preset'
+export * from '@apparatus/meta-start-preset'
 
 export const checkChromeScreenshots = CheckChromeScreenshots()
 export const checkFirefoxScreenshots = CheckFirefoxScreenshots()
